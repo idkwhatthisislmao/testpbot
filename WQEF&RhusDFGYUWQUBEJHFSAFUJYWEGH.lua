@@ -866,6 +866,18 @@ local Commands = {
 
 		end	
 	},
+    [32] = {
+		Name = "randommessage",
+		Aliases = {"rm"},
+		Enabled = true,
+		SuperAdminOnly = false,
+		Bypassers = {},
+		Function = function(Sender, Data)
+			
+            SendMessage(RandomMessages[math.random(1,#RandomMessages)])
+
+		end	
+	},
 }
 
 function Jump()
