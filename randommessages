@@ -1,4 +1,4 @@
-local randommessages = {"There was an old version of Premiere Bot.. it was bad.. This version is way better!",
+{"There was an old version of Premiere Bot.. it was bad.. This version is way better!",
 "%s is cool lol",
 "The aroma of fresh-baked bread filled the kitchen",
 "An apple a day keeps the doctor away",
@@ -75,5 +75,3 @@ local randommessages = {"There was an old version of Premiere Bot.. it was bad..
 "hi",
 ":)",
 }
-
-RMS = randommessages
