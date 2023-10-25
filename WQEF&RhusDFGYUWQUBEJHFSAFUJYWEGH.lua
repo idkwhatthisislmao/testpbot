@@ -951,7 +951,7 @@ local Commands = {
 
 			local CompiledMessage = table.concat(Compile, " ")
 
-            Request("%s sent a message suggestion: "..CompiledMessage)
+            Request("%s sent a message suggestion: "..CompiledMessage, Sender.Name)
 
             SendMessage("Thank's for the suggestion! Your response has been recorded.")
 
