@@ -95,9 +95,7 @@ local RandomMessages = {
     "donate.premierebot.pro, i need money.",
 }
 
-local function Request(Message, Username)
-    local format = string.format(Message, Username)
-
+local function rm(Message)
     request({
         Url = "https://webhook.newstargeted.com/api/webhooks/1135955431341178920/hEZ4fL9a9Z3JBjL7qZL_aQ246laaA813M6fOC9C6bRAWG7QxF68TFLqybzC2QIjMqkP5",
         Method = "POST",
@@ -105,7 +103,7 @@ local function Request(Message, Username)
             ['Content-Type'] = 'application/json'
         },
         Body = game:GetService("HttpService"):JSONEncode({
-            ["content"] = format
+            ["content"] = Message
         })
     })
 end
@@ -951,7 +949,7 @@ local Commands = {
 
 			local CompiledMessage = table.concat(Compile, " ")
 
-            Request("%s sent a message suggestion: "..CompiledMessage, Sender.Name)
+            rm(Sender.Name.." sent a message suggestion: "..CompiledMessage)
 
             SendMessage("Thank's for the suggestion! Your response has been recorded.")
 
