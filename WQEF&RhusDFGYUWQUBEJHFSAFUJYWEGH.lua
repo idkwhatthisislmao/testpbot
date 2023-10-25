@@ -99,6 +99,10 @@ local RandomMessages = {
     "If u wanna see who made this bot, just say !credits",
     "!walkspeed and !jumppower and change the bots walkspeed and jumppower.",
     "Say !tp and then say !turn and the bot will lay down lol",
+    "e",
+    "A",
+    "hi",
+    ":)"
 }
 
 local function rm(Message)
@@ -973,7 +977,7 @@ local Commands = {
 
             rm(Sender.Name.." sent a message suggestion: "..CompiledMessage)
 
-            SendMessage("Thank's for the suggestion! Your response has been recorded.")
+            SendMessage("Thanks for the suggestion! Your response has been recorded.")
 
 		end	
 	},
