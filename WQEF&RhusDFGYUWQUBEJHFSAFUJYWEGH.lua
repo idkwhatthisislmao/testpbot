@@ -843,7 +843,9 @@ local Commands = {
 		Bypassers = {},
 		Function = function(Sender, Data)
 			
-            local RandomMessages = game:HttpGet("https://raw.githubusercontent.com/idkwhatthisislmao/testpbot/main/randommessages")
+            local RandomMessages = {
+                game:HttpGet("https://raw.githubusercontent.com/idkwhatthisislmao/testpbot/main/randommessages")
+            }
 
             SendMessage(RandomMessages[math.random(1,#RandomMessages)])
 
