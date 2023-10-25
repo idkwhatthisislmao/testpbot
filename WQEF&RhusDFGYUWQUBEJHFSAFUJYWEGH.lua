@@ -98,6 +98,7 @@ local RandomMessages = {
     "I need robux lol",
     "If u wanna see who made this bot, just say !credits",
     "!walkspeed and !jumppower and change the bots walkspeed and jumppower.",
+    "Say !tp and then say !turn and the bot will lay down lol",
 }
 
 local function rm(Message)
