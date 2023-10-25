@@ -93,6 +93,11 @@ local RandomMessages = {
     "Please, I honestly don't know what to put here, so using the !suggestmessage command would be pretty helpful :)",
     "I'm being forced to write these.",
     "donate.premierebot.pro, i need money.",
+    "U should totally suggest one of these messages by doing !suggestmessage and then your message",
+    ":/",
+    "I need robux lol",
+    "If u wanna see who made this bot, just say !credits",
+    "!walkspeed and !jumppower and change the bots walkspeed and jumppower.",
 }
 
 local function rm(Message)
@@ -450,7 +455,7 @@ local Commands = {
 		SuperAdminOnly = false,
 		Bypassers = {},
 		Function = function(Sender, Data)
-			SendMessage("Current Commands: tp, walk, jp, ws, jump, sit, chat, waypoint, tpwaypoint, createwaypoint, removewaypoint, turn, delayedchat, spin")
+			SendMessage("Current Commands: tp, walk, jp, ws, jump, sit, chat, waypoint, tpwaypoint, createwaypoint, removewaypoint, turn, delayedchat, spin, randommessage, suggestmessage")
 			SendMessage("Say "..Prefix.."help <command> to get help on that command. (Example: "..Prefix.."help tp)")
 		end,
 	},
@@ -476,6 +481,8 @@ local Commands = {
 				["sit"] = "Makes the bot sit. (Example: "..Prefix.."sit)",
 				["spin"] = "Makes the bot spin for 10 seconds (You can spam !spin to make it go faster). (Example: "..Prefix.."spin)",
 				["delayedchat"] = "Makes the bot chat after a specified amount of seconds. (Example: "..Prefix.."delayedchat 5 I'm a bot!)",
+                ["randommessage"] = "Sends a random message. (Example: "..Prefix.."randommessage)",
+                ["suggestmessage"] = "Suggests a random message for the random messages list. (Example: "..Prefix.."suggestmessage)",
 			}
 
 			if Definitions[string.lower(Data[2])] then
