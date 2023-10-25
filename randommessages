@@ -76,4 +76,4 @@ local randommessages = {"There was an old version of Premiere Bot.. it was bad..
 ":)",
 }
 
-return randommessage
+RMS = randommessages
