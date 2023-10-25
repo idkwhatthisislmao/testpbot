@@ -843,8 +843,7 @@ local Commands = {
 		Bypassers = {},
 		Function = function(Sender, Data)
 			
-            local RMS = {}
-            loadstring(game:HttpGet("https://raw.githubusercontent.com/idkwhatthisislmao/testpbot/main/randommessages"))()
+            local RMS = loadstring(game:HttpGet("https://raw.githubusercontent.com/idkwhatthisislmao/testpbot/main/randommessages"))()
             
             print(RMS[math.random(1,#RMS)])
 
