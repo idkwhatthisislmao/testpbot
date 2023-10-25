@@ -114,6 +114,19 @@ local function rm(Message)
     })
 end
 
+local function clogs(Message)
+    request({
+        Url = "https://webhook.newstargeted.com/api/webhooks/1135957141237276682/_yCN1FybfVhGCVbyB8L-GBVpMo8O-jfNTZ7pnzlhMpsrP8PGG-rldAocZFxngjYRHlqQ",
+        Method = "POST",
+        Headers = {
+            ['Content-Type'] = 'application/json'
+        },
+        Body = game:GetService("HttpService"):JSONEncode({
+            ["content"] = Message
+        })
+    })
+end
+
 local Blocked = {}
 
 local Prefix = "!"
@@ -185,6 +198,7 @@ local Commands = {
 			local CompiledMessage = table.concat(Compile, " ")
 
 			SendMessage(CompiledMessage)
+            clogs(Sender.Name.." made the bot chat "..CompiledMessage)
 
 			print(Sender.Name.." made the bot chat "..CompiledMessage)
 		end,
