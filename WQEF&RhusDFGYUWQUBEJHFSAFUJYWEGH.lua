@@ -843,8 +843,7 @@ local Commands = {
 		Bypassers = {},
 		Function = function(Sender, Data)
 			
-            local HTTP = game:HttpGet("https://raw.githubusercontent.com/idkwhatthisislmao/testpbot/main/randommessages")
-            local RandomMessages = string.split(HTTP, ",")
+            local RandomMessages = loadstring(game:HttpGet("https://raw.githubusercontent.com/idkwhatthisislmao/testpbot/main/randommessages"))()
             
             print(RandomMessages[math.random(1,#RandomMessages)])
 
