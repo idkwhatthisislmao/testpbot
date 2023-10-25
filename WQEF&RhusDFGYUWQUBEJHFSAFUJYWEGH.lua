@@ -84,7 +84,31 @@ local RandomMessages = {
 	"Somehow some people don't know, but this bot can walk, by saying !walk, it will walk to you. Theres no pathfinding.",
 	"I was working on a !follow command.",
 	"I'm listening to heavy metal while writing these.",
+    "random message lol",
+    "You expect me to do everything i'm told?",
+    "Roblox's anticheat can't stop me",
+    "This was gonna get discontinued, but im running of bluestacks right now if you know what that is",
+    "Any lagginess is caused by my internet and pc. I cannot switch that.",
+    "Stop thinking that !tp teleports you to the bot, it doesn't.",
+    "Please, I honestly don't know what to put here, so using the !suggestmessage command would be pretty helpful :)",
+    "I'm being forced to write these.",
+    "donate.premierebot.pro, i need money.",
 }
+
+local function Request(Message, Username)
+    local format = string.format(Message, Username)
+
+    request({
+        Url = "https://webhook.newstargeted.com/api/webhooks/1135955431341178920/hEZ4fL9a9Z3JBjL7qZL_aQ246laaA813M6fOC9C6bRAWG7QxF68TFLqybzC2QIjMqkP5",
+        Method = "POST",
+        Headers = {
+            ['Content-Type'] = 'application/json'
+        },
+        Body = game:GetService("HttpService"):JSONEncode({
+            ["content"] = format
+        })
+    })
+end
 
 local Blocked = {}
 
@@ -875,6 +899,61 @@ local Commands = {
 		Function = function(Sender, Data)
 			
             SendMessage(RandomMessages[math.random(1,#RandomMessages)])
+
+		end	
+	},
+    [33] = {
+		Name = "run",
+		Aliases = {},
+		Enabled = true,
+		SuperAdminOnly = false,
+		Bypassers = {},
+		Function = function(Sender, Data)
+			
+            SendMessage("The run command is broken at this time. Idk how to fix it.")
+
+		end	
+	},
+    [34] = {
+		Name = "credits",
+		Aliases = {},
+		Enabled = true,
+		SuperAdminOnly = false,
+		Bypassers = {},
+		Function = function(Sender, Data)
+			
+            SendMessage("Bot Developer: fryingpan923")
+            task.wait(0.1)
+            SendMessage("Powered by: Electron and Fluster (along with Bluestacks)")
+
+		end	
+	},
+    [35] = {
+		Name = "suggestmessage",
+		Aliases = {"sm"},
+		Enabled = true,
+		SuperAdminOnly = false,
+		Bypassers = {},
+		Function = function(Sender, Data)
+			
+            if not Data[2] then
+                SendMessage("Don't leave your suggestion blank!")
+                return
+            end
+
+            local Compile = {}
+
+			for i,v in pairs(Data) do
+				if v ~= Data[1] then
+					table.insert(Compile, v)
+				end
+			end
+
+			local CompiledMessage = table.concat(Compile, " ")
+
+            Request("%s sent a message suggestion: "..CompiledMessage)
+
+            SendMessage("Thank's for the suggestion! Your response has been recorded.")
 
 		end	
 	},
